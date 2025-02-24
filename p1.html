@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; }
+        .container {
+            width: 100%;
+            height: 700px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 10px;
+            padding: 50px;
+            background-color: rgb(193, 143, 239);
+        }
+        .box {
+            background-color: lightgray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" onclick="location.href='p2.html'"><img src="n2.jpg" alt="Image 1"></div>
+        <div class="box" onclick="location.href='p3.html'"><img src="a1.jpg" alt="Image 2"></div>
+        <div class="box" onclick="location.href='p4.html'"><img src="c1.jpg" alt="Image 3"></div>
+        <div class="box" onclick="location.href='p5.html'"><img src="u1.jpg" alt="Image 4"></div>
+    </div>
+</body>
+</html>

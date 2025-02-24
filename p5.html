@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slideshow</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f4f4f4; }
+        .slideshow-container {
+            position: relative;
+            width: 600px;
+            height: 750px;
+            text-align: center;
+            background-image: url(bb4.jpg);
+            object-fit: cover;
+            background-size: cover;
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            padding: 50px;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+        .slide h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        .slide p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="slide active">
+            <h2>"Art speaks where words are unable to explain." — Mathiole</h2>
+            <p>"Abstract art breaks the boundaries of reality, expressing emotions beyond words. Bold colors, dynamic shapes, and fluid lines create a world of imagination. Each piece is open to interpretation, inviting the viewer to see their own meaning. In abstraction, creativity knows no limits."</p>
+            <img src="u1.jpg" alt="Image 1">
+        </div>
+        <div class="slide">
+            <h2>"Abstract art is not the creation of another reality but the true vision of reality." — Piet Mondrian</h2>
+            <p>"Art speaks through colors, textures, and forms, telling stories without words. Abstract creations blend chaos and harmony, creating a dance of emotion on canvas. Every brushstroke holds energy, every splash of paint carries passion. The beauty of abstraction lies in its endless possibilities."</p>
+            <img src="u2.jpg" alt="Image 2">
+        </div>
+        <div class="slide">
+            <h2>"Every artist dips his brush in his own soul and paints his own nature into his pictures." — Henry Ward Beecher</h2>
+            <p>"Abstract art is a reflection of feelings, thoughts, and the subconscious mind. It does not imitate life but rather captures its essence in a unique form. Lines may swirl, colors may collide, but every piece holds deep emotion. It is a silent conversation between the artist and the viewer."</p>
+            <img src="u3.jpg" alt="Image 3">
+        </div>
+        <div class="slide">
+            <h2>"Art enables us to find ourselves and lose ourselves at the same time." — Thomas Merton</h2>
+            <p>"Art is the bridge between imagination and reality, where dreams take visual form. Abstract creations challenge perceptions, making the unseen visible. Every painting, sculpture, or design carries the soul of its creator. In the world of art, there are no rules—only endless inspiration."</p>
+            <img src="u4.jpg" alt="Image 4">
+        </div>
+        
+    </div>
+    <script>
+        let slides = document.querySelectorAll('.slide');
+        let index = 0;
+        
+        function changeSlide() {
+            slides[index].classList.remove('active');
+            index = (index + 1) % slides.length;
+            slides[index].classList.add('active');
+        }
+        
+        setInterval(changeSlide, 2000);
+    </script>
+</body>
+</html>

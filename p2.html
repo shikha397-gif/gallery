@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slideshow</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f4f4f4; }
+        .slideshow-container {
+            position: relative;
+            width: 500px;
+            height: 600px;
+            text-align: center;
+            background-image: url(bb1.jpg);
+            object-fit: cover;
+            background-size: cover;
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            padding: 50px;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+        .slide h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        .slide p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="slide active">
+            <h2>"Look deep into nature, and then you will understand everything better." </h2>
+            <p>"The beauty of nature lies in its endless landscapes, from towering mountains to flowing rivers. Lush green forests whisper the songs of the wind, while the golden sun paints the sky at dawn. Gentle waves kiss the shores, creating a soothing melody of peace. Nature’s embrace brings serenity, reminding us of the world’s true wonders." </p>
+            <img src="n5.webp" alt="Image 1">
+        </div>
+        <div class="slide">
+            <h2>"In every walk with nature, one receives far more than he seeks."</h2>
+            <p>"Nature's beauty lies in its endless landscapes, from towering mountains to flowing rivers. The rustling leaves and chirping birds create a peaceful symphony. Golden sunsets paint the sky with hues of orange and pink. In nature’s embrace, we find tranquility and harmony."</p>
+            <img src="n4.avif" alt="Image 2">
+        </div>
+        <div class="slide">
+            <h2>"Nature does not hurry, yet everything is accomplished."</h2>
+            <p>"Mighty waves crash against the shore, sculpting the land over centuries. Storms rage and winds howl, reminding us of nature’s untamed power. Yet, after the storm, the sun rises, bringing renewal and hope. Nature’s strength is a force both fierce and nurturing."
+
+            </p>
+            <img src="n3.jpg" alt="Image 3">
+        </div>
+        <div class="slide">
+            <h2>"Adopt the pace of nature: her secret is patience." — Ralph Waldo Emerson</h2>
+            <p>"Fields bloom with flowers in every shade, painting the earth in vibrant hues. The sky shifts from deep blue to fiery red as the sun sets. Lush green forests and crystal-clear waters create a stunning contrast. Nature is an ever-changing masterpiece of colors and light."</p>
+            <img src="n2.jpg" alt="Image 4">
+        </div>
+       
+    </div>
+    <script>
+        let slides = document.querySelectorAll('.slide');
+        let index = 0;
+        
+        function changeSlide() {
+            slides[index].classList.remove('active');
+            index = (index + 1) % slides.length;
+            slides[index].classList.add('active');
+        }
+        
+        setInterval(changeSlide, 2000);
+    </script>
+</body>
+</html>

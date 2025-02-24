@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slideshow</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f4f4f4; }
+        .slideshow-container {
+            position: relative;
+            width: 500px;
+            height: 600px;
+            text-align: center;
+            background-image: url(bb3.jpg);
+            object-fit: cover;
+            background-size: cover;
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            padding: 50px;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+        .slide h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        .slide p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="slide active">
+            <h2>"The best things in life are handmade." — Unknown</h2>
+            <p>"Handcrafted art carries the soul of its creator, each piece uniquely made with love. Every brushstroke, stitch, and carve reflects patience and passion. Unlike mass-produced items, handmade pieces hold a special, personal touch. They celebrate creativity, tradition, and the art of true craftsmanship."</p>
+            <img src="c1.jpg" alt="Image 1">
+        </div>
+        <div class="slide">
+            <h2> "Handcrafted items are more than just objects; they carry the heart and soul of the maker." —</h2>
+            <p>"Handcrafting is a tradition passed down through generations, preserving culture and skill. Whether it’s weaving, pottery, or carving, each technique tells a story. The hands of artisans shape raw materials into timeless treasures. In every handcrafted piece, history and heritage live on."</p>
+            <img src="c2.webp" alt="Image 2">
+        </div>
+        <div class="slide">
+            <h2>"Crafting is the art of turning imagination into reality, one stitch, carve, or brushstroke at a time."</h2>
+            <p>"No two handcrafted pieces are ever the same, making each creation one of a kind. Imperfections add to the charm, showcasing the artist’s dedication and vision. From delicate embroidery to bold sculptures, handcraft celebrates originality. It is not just an object but an expression of human creativity."</p>
+            <img src="c3.webp" alt="Image 3">
+        </div>
+        <div class="slide">
+            <h2>"A handmade piece is a piece of the artist’s heart that lasts forever."</h2>
+            <p>"Handcrafting transforms simple materials into extraordinary works of art. The effort and skill behind each piece give it meaning beyond its form. Every handmade item carries a personal story, making it truly special. In a world of machines, handcraft reminds us of the beauty of human touch."</p>
+            <img src="c4.avif" alt="Image 4">
+        </div>
+       
+    </div>
+    <script>
+        let slides = document.querySelectorAll('.slide');
+        let index = 0;
+        
+        function changeSlide() {
+            slides[index].classList.remove('active');
+            index = (index + 1) % slides.length;
+            slides[index].classList.add('active');
+        }
+        
+        setInterval(changeSlide, 2000);
+    </script>
+</body>
+</html>
